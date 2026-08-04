@@ -4,26 +4,14 @@
   "version": "4.7.2",
   "fileSize": "158 MB",
   "requirements": "Windows 10 & 11 (64 bit)",
-  "downloadUrl": "ID-Picture-Layout-Setup-4.7.2.zip",
+  "downloadUrl": "https://github.com/jamiris28/idsizer/releases/download/v4.7.2/ID-Picture-Layout-Setup-4.7.2.zip",
   "logoUrl": "",
   "contactEmail": "lkprintshop25@gmail.com",
   "featuresSub": "if youre strugging for using complicated software, this tool is right for you",
   "showInstall": true,
   "features": [
-    {
-      "icon": "⚡",
-      "title": "Fast",
-      "text": ""
-    },
-    {
-      "icon": "🔒",
-      "title": "Private",
-      "text": ""
-    },
-    {
-      "icon": "🪶",
-      "title": "Lightweight",
-      "text": ""
-    }
+    { "icon": "⚡", "title": "Fast", "text": "" },
+    { "icon": "🔒", "title": "Private", "text": "" },
+    { "icon": "🪶", "title": "Lightweight", "text": "" }
   ]
 }
