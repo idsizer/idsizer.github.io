@@ -1,17 +1,17 @@
 {
   "appName": "ID Picture Layout",
-  "tagline": "EDIT ME — one short sentence about what the app does.",
-  "version": "4.7.0",
-  "fileSize": "",
+  "tagline": "A Windows tool for laying out ID photos for printing.",
+  "version": "4.7.2",
+  "fileSize": "158 MB",
   "requirements": "Windows 10 & 11 (64-bit)",
-  "downloadUrl": "",
+  "downloadUrl": "https://github.com/jamiris28/id-picture-layout/releases/download/v4.7.2/ID-Picture-Layout-Setup-4.7.2.zip",
   "logoUrl": "",
   "contactEmail": "",
   "featuresSub": "The main reasons people use it.",
   "showInstall": true,
   "features": [
-    { "icon": "⚡", "title": "Fast", "text": "EDIT ME — one or two short lines." },
-    { "icon": "🖨️", "title": "Print-ready", "text": "EDIT ME — one or two short lines." },
-    { "icon": "💸", "title": "Free", "text": "EDIT ME — one or two short lines." }
+    { "icon": "💸", "title": "Free to download", "text": "No account, no sign-up, no payment." },
+    { "icon": "🪟", "title": "Runs on Windows", "text": "Works on Windows 10 and 11, 64-bit." },
+    { "icon": "🖨️", "title": "Print-ready output", "text": "Lay photos out for standard photo paper sizes." }
   ]
 }
