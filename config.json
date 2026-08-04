@@ -1,17 +1,29 @@
 {
-  "appName": "ID Picture Layout",
-  "tagline": "A Windows tool for laying out ID photos for printing.",
+  "appName": "ID SIZER v4",
+  "tagline": "Fast ID layouting system",
   "version": "4.7.2",
   "fileSize": "158 MB",
-  "requirements": "Windows 10 & 11 (64-bit)",
-  "downloadUrl": "https://github.com/jamiris28/id-picture-layout/releases/download/v4.7.2/ID-Picture-Layout-Setup-4.7.2.zip",
+  "requirements": "Windows 10 & 11 (64 bit)",
+  "downloadUrl": "ID-Picture-Layout-Setup-4.7.2.zip",
   "logoUrl": "",
-  "contactEmail": "",
-  "featuresSub": "The main reasons people use it.",
+  "contactEmail": "lkprintshop25@gmail.com",
+  "featuresSub": "if youre strugging for using complicated software, this tool is right for you",
   "showInstall": true,
   "features": [
-    { "icon": "💸", "title": "Free to download", "text": "No account, no sign-up, no payment." },
-    { "icon": "🪟", "title": "Runs on Windows", "text": "Works on Windows 10 and 11, 64-bit." },
-    { "icon": "🖨️", "title": "Print-ready output", "text": "Lay photos out for standard photo paper sizes." }
+    {
+      "icon": "⚡",
+      "title": "Fast",
+      "text": ""
+    },
+    {
+      "icon": "🔒",
+      "title": "Private",
+      "text": ""
+    },
+    {
+      "icon": "🪶",
+      "title": "Lightweight",
+      "text": ""
+    }
   ]
 }
