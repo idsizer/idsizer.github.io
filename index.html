@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download</title>
+<meta name="description" content="">
+<style>
+  :root{
+    --bg:#0b0d12;--surface:#141821;--border:#232936;
+    --text:#e8ecf3;--muted:#98a2b3;--accent:#4f7cff;--accent-hover:#3d68e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--border);padding:20px 0;position:sticky;top:0;background:rgba(11,13,18,.85);backdrop-filter:blur(10px);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+  .brand img{width:32px;height:32px;border-radius:8px}
+  .nav a{color:var(--muted);text-decoration:none;font-size:15px}
+  .nav a:hover{color:var(--text)}
+  .hero{text-align:center;padding:88px 0 72px}
+  .hero h1{font-size:clamp(34px,6vw,58px);line-height:1.1;letter-spacing:-1px;font-weight:800}
+  .hero p{color:var(--muted);font-size:19px;max-width:600px;margin:20px auto 36px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;text-decoration:none;padding:16px 34px;border-radius:12px;font-size:17px;font-weight:600;transition:background .15s,transform .15s;box-shadow:0 8px 24px rgba(79,124,255,.25)}
+  .btn:hover{background:var(--accent-hover);transform:translateY(-1px)}
+  .meta{color:var(--muted);font-size:14px;margin-top:16px}
+  section{padding:72px 0}
+  h2{font-size:30px;text-align:center;letter-spacing:-.5px;margin-bottom:12px}
+  .sub{color:var(--muted);text-align:center;margin-bottom:48px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px}
+  .card .ico{font-size:26px;margin-bottom:12px;display:block}
+  .card h3{font-size:17px;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:15px}
+  .steps{max-width:620px;margin:0 auto}
+  .step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+  .step:last-child{border-bottom:none}
+  .num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+  .step p{color:var(--muted);font-size:15px}
+  .step strong{color:var(--text);font-weight:600}
+  .cta{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:56px 24px;text-align:center}
+  footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img id="logo" alt="" style="display:none">
+      <span data-bind="appName">MyApp</span>
+    </div>
+    <nav><a href="#features">Features</a></nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <h1><span data-bind="appName">MyApp</span> for Windows</h1>
+  <p data-bind="tagline">One short sentence about what your app does.</p>
+  <a class="btn dl" href="#" download>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10 4.6v6.9H3V5.5Zm0 13 7 .9v-6.8H3v5.9Zm8 1L21 21V12.6h-10v6.9ZM11 4.4 21 3v8.4H11V4.4Z"/></svg>
+    Download for Windows
+  </a>
+  <div class="meta metaline"></div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="sub" data-bind="featuresSub">The main reasons people use it.</p>
+    <div class="grid" id="features-grid"></div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>How to install</h2>
+    <p class="sub">Takes about a minute.</p>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2 style="margin-bottom:20px">Ready to try it?</h2>
+      <a class="btn dl" href="#" download>Download for Windows</a>
+      <div class="meta metaline"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> <span data-bind="appName">MyApp</span>
+    <span id="contact-wrap"> · <a id="contact" href="#">Contact</a></span>
+  </div>
+</footer>
+
+<script>
+/* Loads config.json (created by admin.html) and fills the page.
+   If config.json is missing, the defaults below are used. */
+const DEFAULTS = {
+  appName:"MyApp",
+  tagline:"One short sentence about what your app does.",
+  version:"1.0.0",
+  fileSize:"",
+  requirements:"Windows 10 & 11 (64-bit)",
+  downloadUrl:"",
+  contactEmail:"",
+  logoUrl:"",
+  featuresSub:"The main reasons people use it.",
+  features:[],
+  showInstall:true
+};
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function render(c){
+  document.title = c.appName + " — Free Download for Windows";
+  document.querySelector('meta[name=description]').content =
+    c.tagline ? c.appName + " — " + c.tagline : c.appName;
+
+  document.querySelectorAll('[data-bind]').forEach(el=>{
+    const v = c[el.dataset.bind];
+    if(v) el.textContent = v;
+  });
+
+  if(c.logoUrl){ const l=document.getElementById('logo'); l.src=c.logoUrl; l.style.display=''; l.onerror=()=>l.style.display='none'; }
+
+  document.querySelectorAll('a.dl').forEach(a=>{
+    if(c.downloadUrl){ a.href=c.downloadUrl; a.removeAttribute('aria-disabled'); }
+    else { a.href='#'; a.style.opacity='.55'; a.title='No file set yet'; }
+  });
+
+  const parts=[];
+  if(c.version) parts.push("Version "+c.version);
+  if(c.fileSize) parts.push(c.fileSize);
+  if(c.requirements) parts.push(c.requirements);
+  document.querySelectorAll('.metaline').forEach(m=>m.innerHTML = parts.map(esc).join(" &nbsp;·&nbsp; "));
+
+  const grid=document.getElementById('features-grid');
+  grid.innerHTML = (c.features||[]).map(f=>
+    `<div class="card"><span class="ico">${esc(f.icon||'✦')}</span><h3>${esc(f.title||'')}</h3><p>${esc(f.text||'')}</p></div>`
+  ).join('');
+  if(!(c.features||[]).length) document.getElementById('features').style.display='none';
+
+  const zip = /\.zip(\?|$)/i.test(c.downloadUrl||'');
+  const steps = zip ? [
+    ["Download the zip.","Click the button above and save the file."],
+    ["Extract it.","Right-click the downloaded zip → <em>Extract All</em>, then open the extracted folder."],
+    ["Run "+esc(c.appName)+".","Double-click the app inside. If Windows shows a “protected your PC” warning, click <em>More info → Run anyway</em>."]
+  ] : [
+    ["Download the installer.","Click the button above and save the file."],
+    ["Run it.","Double-click the downloaded file. If Windows shows a “protected your PC” warning, click <em>More info → Run anyway</em>."],
+    ["Open "+esc(c.appName)+".","It'll appear in your Start menu when setup finishes."]
+  ];
+  document.getElementById('steps').innerHTML = steps.map(([t,d],i)=>
+    `<div class="step"><div class="num">${i+1}</div><p><strong>${t}</strong> ${d}</p></div>`
+  ).join('');
+  if(c.showInstall===false) document.getElementById('install').style.display='none';
+
+  if(c.contactEmail) document.getElementById('contact').href='mailto:'+c.contactEmail;
+  else document.getElementById('contact-wrap').style.display='none';
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+}
+
+/* Preview mode: admin.html stashes unsaved settings here so you can
+   check the page before publishing. Harmless on a live site. */
+let preview=null;
+try{ preview = JSON.parse(localStorage.getItem('dlpage-preview')||'null') }catch(e){}
+
+if(preview && location.search.indexOf('live')===-1 && location.protocol==='file:'){
+  render(Object.assign({},DEFAULTS,preview));
+}else{
+  fetch('config.json',{cache:'no-store'})
+    .then(r=>r.ok?r.json():Promise.reject())
+    .then(c=>render(Object.assign({},DEFAULTS,c)))
+    .catch(()=>render(Object.assign({},DEFAULTS,preview||{})));
+}
+</script>
+</body>
+</html>

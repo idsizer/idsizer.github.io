@@ -1,0 +1,17 @@
+{
+  "appName": "ID Picture Layout",
+  "tagline": "EDIT ME — one short sentence about what the app does.",
+  "version": "4.7.0",
+  "fileSize": "",
+  "requirements": "Windows 10 & 11 (64-bit)",
+  "downloadUrl": "",
+  "logoUrl": "",
+  "contactEmail": "",
+  "featuresSub": "The main reasons people use it.",
+  "showInstall": true,
+  "features": [
+    { "icon": "⚡", "title": "Fast", "text": "EDIT ME — one or two short lines." },
+    { "icon": "🖨️", "title": "Print-ready", "text": "EDIT ME — one or two short lines." },
+    { "icon": "💸", "title": "Free", "text": "EDIT ME — one or two short lines." }
+  ]
+}
