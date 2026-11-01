@@ -1,0 +1,8 @@
+{
+  "name": "id-picture-layout",
+  "version": "4.7.5",
+  "description": "ID Picture Layout Tool",
+  "main": "main.js",
+  "author": "ID Picture Layout",
+  "license": "MIT"
+}
